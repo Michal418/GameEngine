@@ -23,7 +23,7 @@ HRESULT Renderer::init(uint16_t width, uint16_t height)
 	if (FAILED(hr))
 		return hr;
 
-	const wchar_t* class_name = L"Mangas";
+	const wchar_t* class_name = L"Game Engine";
 
 	m_win_width = width;
 	m_win_height = height;
@@ -186,14 +186,14 @@ HRESULT Renderer::draw_entity_gizmos(Entity& entity)
 	auto brush = m_scene_ptr->m_colliding ? m_foreground_brush_ptr : m_background_brush_ptr;
 	Camera cam = m_scene_ptr->camera;
 
-	// vykreslí okraje collideru entity
+	// vykreslÃ­ okraje collideru entity
 	m_render_target_ptr->DrawRectangle(D2D1::RectF(
 		entity.left() - cam.left(),
 		m_win_height - entity.top() + cam.bottom(),
 		entity.right() - cam.left(),
 		m_win_height - entity.bottom() + cam.bottom()), brush);
 
-	// vykreslí rychlostní vektor entity
+	// vykreslÃ­ rychlostnÃ­ vektor entity
 	m_render_target_ptr->DrawLine(
 		{
 			entity.position.x - cam.left(),
@@ -217,17 +217,17 @@ HRESULT Renderer::on_render()
 	m_render_target_ptr->BeginDraw();
 	m_render_target_ptr->SetTransform(D2D1::Matrix3x2F::Identity());
 
-	// vyèistí obrazovku
+	// vyÃ¨istÃ­ obrazovku
 	m_render_target_ptr->Clear(D2D1::ColorF(D2D1::ColorF::AliceBlue));
 
-	// vykreslí každou entitu
+	// vykreslÃ­ kaÅ¾dou entitu
 	for (Entity* e : *(m_scene_ptr->m_entity_collection_ptr))
 	{
 		hr = draw_entity(*e);
 		if (FAILED(hr)) return hr;
 	}
 
-	// vykreslí gizmos každé enity
+	// vykreslÃ­ gizmos kaÅ¾dÃ© enity
 	for (Entity* e : *(m_scene_ptr->m_entity_collection_ptr))
 	{
 		hr = draw_entity_gizmos(*e);
@@ -293,7 +293,7 @@ HRESULT Renderer::load_image(const char* file_name, ID2D1Bitmap*& out_bitmap_ptr
 HRESULT Renderer::load_image(const LPCWSTR file_name, ID2D1Bitmap*& out_bitmap_ptr) const
 {
 	/*
-	* Nevím jak a proè to funguje
+	* NevÃ­m jak a proÃ¨ to funguje
 	*/
 
 	HRESULT hr = S_OK;
