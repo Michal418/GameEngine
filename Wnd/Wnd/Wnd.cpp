@@ -8,7 +8,7 @@ class Player1 : public Entity
 public:
 	virtual void on_create() override
 	{
-		texture = { L"mc.png", 3.2f };
+		texture = { L"", 3.2f };
 		mass = 20;
 		restitution = 1;
 		position = { 100, 300 };
@@ -49,7 +49,7 @@ public:
 
 	virtual void on_create() override
 	{
-		texture = { L"polak.png", .33f };
+		texture = { L"", .33f };
 		mass = 20;
 		restitution = .2f;
 		position = { 500, 600 };
@@ -127,13 +127,13 @@ public:
 
 /*
 * - tilemapy
-*	- parsov·nÌ tilemapy ze souboru
-*	- uloûenÌ tilemapy v pamÏti
-*	- renderov·nÌ tilemapy
+*	- parsov√°n√≠ tilemapy ze souboru
+*	- ulo≈æen√≠ tilemapy v pam√¨ti
+*	- renderov√°n√≠ tilemapy
 *	- fyzika tilemapy
-* - DirectInput pro lepöÌ input
+* - DirectInput pro lep≈°√≠ input
 * - Direct3D a swap-chain
-* - serializace sacÈny a entit
+* - serializace sac√©ny a entit
 */
 
 
